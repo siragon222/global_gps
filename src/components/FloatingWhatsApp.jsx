@@ -1,7 +1,7 @@
 import React from 'react'
 
 function FloatingWhatsApp() {
-  const whatsappHref = 'https://wa.me/5758841288'
+  const whatsappHref = 'https://wa.me/573144686437'
   return (
     <a
       href={whatsappHref}

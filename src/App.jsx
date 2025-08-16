@@ -11,6 +11,7 @@ import Assurance from './components/Assurance.jsx'
 import Stats from './components/Stats.jsx'
 import ShowcaseVideo from './components/ShowcaseVideo.jsx'
 import FloatingWhatsApp from './components/FloatingWhatsApp.jsx'
+import FloatingPDF from './components/FloatingPDF.jsx'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       </main>
       <Footer />
       <FloatingWhatsApp />
+      <FloatingPDF />
     </div>
   )
 }

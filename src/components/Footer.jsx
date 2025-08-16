@@ -21,10 +21,9 @@ function Footer() {
         <div className="footer-col">
           <div className="contact-info">
             <h4>Oficina Principal</h4>
-            <p>CALLE 16 # 32-86 LOCAL V ACACIAS, META- COLOMBIA</p>
-            <p>Teléfono: +57 314 468 6437 - +57 313 285 5020</p>
-            <p>Atencion: L-V 8:00 a 18:00 S 8:00 A 12:00</p>
-            <p>981 651 065E</p>
+            <p>km 1 vía Acacias - Guamal  bodega 1 - Colombia</p>
+            <p>Teléfono: +57 314 468 6437 - +57 314 201 7858</p>
+            <p>Atención: 24 Horas</p>
             <p>Email: <a href="mailto:globalmonitoringgps@gmail.com">globalmonitoringgps@gmail.com</a></p>
           </div>
         </div>

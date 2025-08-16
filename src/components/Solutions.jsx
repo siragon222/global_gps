@@ -1,5 +1,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import bene1 from '../assets/bene_1.webp'
+import bene2 from '../assets/bene_2.webp'
+import bene3 from '../assets/bene_3.webp'
+import bene4 from '../assets/bene_4.webp'
 
 const items = [
   {
@@ -25,10 +29,7 @@ const items = [
 ]
 
 function Solutions() {
-  const matchedIcons = import.meta.glob('../assets/icon_*.svg', { eager: true, import: 'default' })
-  const iconSrcs = Object.entries(matchedIcons)
-    .sort((a, b) => a[0].localeCompare(b[0], undefined, { numeric: true }))
-    .map(([, src]) => src)
+  const iconSrcs = [bene1, bene2, bene3, bene4]
 
   return (
     <section id="solutions" className="section solutions">
@@ -46,9 +47,9 @@ function Solutions() {
               transition={{ delay: idx * 0.05, duration: 0.5 }}
             >
               <div className="solution-icon">
-                {iconSrcs[idx] && (
+                {iconSrcs[idx % iconSrcs.length] && (
                   <img
-                    src={iconSrcs[idx]}
+                    src={iconSrcs[idx % iconSrcs.length]}
                     alt={`Ícono ${idx + 1}`}
                     className="solution-icon-img"
                   />

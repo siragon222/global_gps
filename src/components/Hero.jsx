@@ -8,8 +8,8 @@ function Hero() {
       <div className="container hero-layout">
         <div className="hero-content">
           <motion.h1 className="hero-title" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.05, duration: 0.7, ease: 'easeOut' }}>
-            <span className="hero-line">Control <span className="gradient-text">total</span></span>
-            <span className="hero-line">y <span className="gradient-text gold">seguridad</span></span>
+            <span className="hero-line">Control <span className="text-red">total</span></span>
+            <span className="hero-line">y <span className="text-red">seguridad</span></span>
             <span className="hero-line">en la palma de tu mano</span>
           </motion.h1>
           <motion.p className="hero-sub" initial={{ y: 16, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.15, duration: 0.6 }}>

@@ -66,7 +66,28 @@
 .neon-button.small { padding: 8px 14px; font-size: 14px; }
 .neon-button.ghost { background: transparent; }
 .neon-button.premium { --glow: #4cc9f0; background: linear-gradient(180deg, rgba(76,201,240,.2), rgba(76,201,240,.08)); border-color: rgba(76,201,240,.45); }
-.neon-button.gold { --glow: #ffd166; background: linear-gradient(180deg, rgba(255,209,102,.22), rgba(255,209,102,.1)); border-color: rgba(255,209,102,.5); color: #fff5da; text-shadow: 0 0 10px rgba(255,209,102,.5); }
+.neon-button.gold {
+  --glow: #ffd76a;
+  color: #fff9e6;
+  background:
+    linear-gradient(180deg, rgba(255, 240, 190, 0.6) 0%, rgba(255, 220, 120, 0.5) 18%, rgba(255, 196, 65, 0.42) 50%, rgba(176, 124, 43, 0.38) 51%, rgba(255, 210, 98, 0.48) 82%, rgba(255, 246, 214, 0.58) 100%),
+    linear-gradient(60deg, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.0) 28%);
+  border: 1px solid rgba(255, 215, 106, 0.75);
+  text-shadow: 0 0 10px rgba(255, 209, 102, 0.55);
+  box-shadow:
+    inset 0 0 18px rgba(255, 215, 106, 0.35),
+    inset 0 8px 22px rgba(255, 255, 255, 0.12),
+    0 0 26px rgba(255, 194, 61, 0.4),
+    0 12px 32px rgba(176, 124, 43, 0.35);
+}
+.neon-button.gold:hover {
+  filter: saturate(1.1) brightness(1.05);
+  box-shadow:
+    inset 0 0 22px rgba(255, 215, 106, 0.45),
+    inset 0 10px 26px rgba(255, 255, 255, 0.16),
+    0 0 32px rgba(255, 194, 61, 0.5),
+    0 14px 36px rgba(176, 124, 43, 0.42);
+}
 
 .hero {
   position: relative;
@@ -92,6 +113,8 @@
   background-clip: text;
   text-shadow: 0 0 22px rgba(126,227,255,.45);
 }
+.text-white { color: #ffffff; text-shadow: 0 0 14px rgba(255,255,255,.18); }
+.text-red { color: #BC181A; text-shadow: 0 0 14px rgba(188,24,26,.35); }
 .gradient-text.gold {
   background: linear-gradient(90deg, #ffd166 0%, #ffb703 50%, #ffd166 100%);
   -webkit-background-clip: text;
@@ -136,6 +159,21 @@
 
 .section { padding: 72px 0; }
 .section-title { font-size: clamp(26px, 3vw, 40px); margin: 0 0 24px; }
+.solutions .section-title { text-align: center; }
+.eyebrow { color: #9bc0ff; letter-spacing: 2px; text-transform: uppercase; font-size: 14px; }
+.assurance .eyebrow {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px solid rgba(155,192,255,0.35);
+  border-radius: 999px;
+  background: rgba(13,24,52,0.5);
+  box-shadow: 0 6px 18px rgba(88,160,255,0.18), inset 0 0 12px rgba(126,227,255,0.12);
+  color: #cfe4ff;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
 
 .solutions .cards {
   display: grid;
@@ -151,6 +189,7 @@
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 0 40px rgba(20,40,90,0.35);
+  text-align: center;
 }
 .solution-card h3 { margin: 12px 0 8px; font-size: 18px; }
 .solution-icon { height: 120px; border-radius: 12px; background: radial-gradient(circle, rgba(126,227,255,0.35), rgba(126,227,255,0.05)); border: 1px solid rgba(126,227,255,0.25); }
@@ -221,13 +260,62 @@
               radial-gradient(60% 60% at 90% 60%, rgba(255,209,102,.14), transparent 60%);
   pointer-events: none;
 }
-.assurance-grid { display: grid; gap: 28px; grid-template-columns: 1fr; align-items: start; }
+.assurance-grid { display: grid; gap: 28px; grid-template-columns: 1fr; align-items: stretch; }
 @media (min-width: 960px) { .assurance-grid { grid-template-columns: 1.1fr 0.9fr; } }
-.assurance-title { font-size: clamp(28px, 4.5vw, 48px); margin-bottom: 10px; }
-.assurance-lead { font-size: clamp(16px, 2.2vw, 20px); margin-bottom: 14px; }
+.assurance-title { font-size: clamp(28px, 4.5vw, 48px); margin-bottom: 12px; }
+.assurance-lead { font-size: clamp(16px, 2.2vw, 20px); margin-bottom: 22px; }
 .chips { display: flex; gap: 10px; flex-wrap: wrap; }
 .chip { border: 1px solid rgba(88,160,255,.25); background: rgba(12,24,52,.6); border-radius: 999px; padding: 8px 12px; font-size: 14px; color: #cfe4ff; }
-.assurance-card { background: linear-gradient(180deg, rgba(24,44,92,0.6), rgba(12,20,44,0.6)); border: 1px solid rgba(88,160,255,0.25); border-radius: 16px; padding: 20px; box-shadow: 0 0 40px rgba(20,40,90,0.25); }
+.assurance-card { background: linear-gradient(180deg, rgba(24,44,92,0.6), rgba(12,20,44,0.6)); border: 1px solid rgba(88,160,255,0.25); border-radius: 16px; padding: 20px; box-shadow: 0 0 40px rgba(20,40,90,0.25); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.assurance-card p + p { margin-top: 14px; }
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+@media (min-width: 900px) {
+  .benefits-grid { grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
+}
+.benefit {
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  gap: 8px;
+  padding: 14px 10px;
+  border: 1px solid rgba(255,209,102,0.25);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(24,44,92,0.45), rgba(12,20,44,0.45));
+  box-shadow: 0 8px 26px rgba(20,40,90,0.28);
+}
+.benefit-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  display: grid;
+  place-items: center;
+}
+.benefit-icon-img { width: 84px; height: 84px; display: block; margin: 0 auto; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25)); }
+@media (min-width: 900px) {
+  .benefit-icon { width: 110px; height: 110px; }
+  .benefit-icon-img { width: 96px; height: 96px; }
+}
+.benefit-label {
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.18);
+}
+.assurance-cta { margin-top: 18px; display: flex; justify-content: center; }
+.assurance-cta .neon-button.cta {
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 900;
+}
 
 /* Stats section */
 .stats { position: relative; }
@@ -306,7 +394,12 @@
 .whatsapp-float:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 16px 32px rgba(18, 140, 126, 0.5), 0 0 26px rgba(37, 211, 102, 0.6); }
 .wa-icon { width: 34px; height: 34px; }
 @media (min-width: 800px) {
-  .whatsapp-float { width: 74px; height: 74px; right: 22px; bottom: 22px; }
+  .whatsapp-float {
+    width: 74px;
+    height: 74px;
+    right: 22px;
+    bottom: 22px;
+  }
   .wa-icon { width: 40px; height: 40px; }
 }
 @keyframes pulse-glow {
@@ -314,6 +407,78 @@
   50% { box-shadow: 0 16px 34px rgba(18, 140, 126, 0.55), 0 0 34px rgba(37, 211, 102, 0.7); }
 }
 @keyframes ring {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.05); opacity: 0.25; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+
+.pdf-float {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: auto;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #4a90e2 0%, #357ABD 70%);
+  box-shadow: 0 12px 28px rgba(53, 122, 189, 0.45), 0 0 22px rgba(74, 144, 226, 0.45);
+  border: 1px solid rgba(255,255,255,0.18);
+  animation: pulse-glow-blue 2.2s ease-in-out infinite;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.pdf-float::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  border: 2px solid rgba(74, 144, 226, 0.3);
+  filter: blur(2px);
+  animation: ring-blue 2.2s ease-in-out infinite;
+}
+
+.pdf-float:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 16px 32px rgba(53, 122, 189, 0.5), 0 0 26px rgba(74, 144, 226, 0.6);
+}
+
+.pdf-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.pdf-text {
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+@media (min-width: 800px) {
+  .pdf-float {
+    left: 22px;
+    bottom: 22px;
+    padding: 14px 22px;
+  }
+  .pdf-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .pdf-text {
+    font-size: 16px;
+  }
+}
+
+@keyframes pulse-glow-blue {
+  0%, 100% { box-shadow: 0 12px 28px rgba(53, 122, 189, 0.45), 0 0 22px rgba(74, 144, 226, 0.45); }
+  50% { box-shadow: 0 16px 34px rgba(53, 122, 189, 0.55), 0 0 34px rgba(74, 144, 226, 0.7); }
+}
+
+@keyframes ring-blue {
   0% { transform: scale(0.9); opacity: 0.6; }
   50% { transform: scale(1.05); opacity: 0.25; }
   100% { transform: scale(0.9); opacity: 0.6; }
