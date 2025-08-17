@@ -26,7 +26,7 @@ $email = $data['email'];
 $phone = $data['phone'];
 
 // Dirección de correo a la que se enviará el mensaje
-$to_email = 'siragon222@gmail.com';
+$to_email = 'subcripcion@globalgps.com';
 
 // Configurar el correo
 $subject = 'Nuevo mensaje de suscripción desde la web';
