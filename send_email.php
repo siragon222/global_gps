@@ -26,7 +26,7 @@ $email = $data['email'];
 $phone = $data['phone'];
 
 // Dirección de correo a la que se enviará el mensaje
-$to_email = 'subcripcion@globalgps.com';
+$to_email = 'comercial@globalmonitorgps.com';
 
 // Configurar el correo
 $subject = 'Nuevo mensaje de suscripción desde la web';
@@ -34,7 +34,7 @@ $message = "Nombre: $name\n";
 $message .= "Correo electrónico: $email\n";
 $message .= "Teléfono: $phone\n";
 
-$headers = "From: siragon222@gmail.com\r\n"; // Cambia esto al correo de tu sitio
+$headers = "From: comercial@globalmonitorgps.com\r\n"; // Cambia esto al correo de tu sitio
 $headers .= "Reply-To: $email\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
@@ -42,6 +42,7 @@ $headers .= "X-Mailer: PHP/" . phpversion();
 if (mail($to_email, $subject, $message, $headers)) {
     echo json_encode(['success' => true, 'message' => 'Correo enviado con éxito']);
 } else {
+    $error = error_get_last();
     http_response_code(500);
-    echo json_encode(['error' => 'Error al enviar el correo']);
+    echo json_encode(['error' => 'Error al enviar el correo', 'mail_error' => $error ? $error['message'] : 'Desconocido']);
 }
